@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <title>DevBoard</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6f086dc852.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            transition: background-color 0.5s ease-in-out;
+            background-color: #f4f7ff;
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="transition-all duration-500" id="body">
+
+    <div>
+        <!-- Hero Section -->
+        <header class="max-w-7xl mx-auto bg-transparent py-4 px-4 sm:px-6 lg:px-8">
+            <section class="mx-auto flex justify-between items-center py-6 px-6 sm:px-10 shadow-md bg-white rounded-lg">
+                <div class="flex items-center gap-3">
+                    <img src="./assets/logo.png" alt="TaskMaster Logo" class="w-10 sm:w-10">
+                    <h1 class="text-2xl sm:text-3xl"><span class="text-gray-600">Dev</span><span
+                            class="font-bold">Board</span></h1>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <button id="TaskCounterIncrease"
+                        class="flex items-center gap-2 bg-blue-100 text-black px-3 py-1 sm:px-4 sm:py-2 rounded-full">
+                        <img src="./assets/checkbox.png" alt="checkbox" class="w-5 sm:w-6">
+                        <h1 id="taskCounter" class="text-xl sm:text-2xl font-bold">23</h1>
+                    </button>
+                    <button id="changeThemeButton" class="bg-gray-300 px-3 py-1 sm:px-4 sm:py-2 rounded-full">
+                        <img src="./assets/theme-btn.png" alt="Theme Toggle" class="w-5 sm:w-6">
+                    </button>
+                </div>
+            </section>
+        </header>
+
+        <section class="max-w-7xl mx-auto bg-transparent px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto pb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-5">
+                    <div class="col-span-1 md:col-span-3 bg-white p-4 sm:p-5 rounded-2xl">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="flex items-center gap-5 bg-[#F4F7FF] py-4 px-3 rounded-2xl">
+                                <div class="p-3 sm:p-4 rounded-full bg-white">
+                                    <img src="assets/checkbox.png" alt="Task Icon" class="w-6 sm:w-8">
+                                </div>
+                                <div>
+                                    <p class="text-[#00303C] font-[500] text-[12px] sm:text-[14px] opacity-75">Tasks
+                                        Assigned</p>
+                                    <h2 id="TaskCounterDecrease" class="font-[700] text-[24px] sm:text-[28px]">06</h2>
+                                </div>
+                            </div>
+
+                            <div id="goToBlog"
+                                class="col-span-2 bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] rounded-2xl flex items-center gap-3 p-3 hover:from-[#9BA8F8] hover:to-[#3752FD] hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <img class="w-10 sm:w-12" src="assets/board.png" alt="Blog Icon">
+                                </div>
+                                <p class="text-white text-[14px] sm:text-[18px] font-[500]">
+                                    Explore New Ideas <br> Today!
+                                </p>
+                            </div>
+
+                            <div class="flex items-center gap-5 bg-[#F4F7FF] py-4 px-3 rounded-2xl">
+                                <div class="p-4 rounded-full bg-white">
+                                    <img src="assets/calender.png" alt="Calendar Icon" class="w-6 sm:w-8">
+                                </div>
+                                <div id="dateDaynamically">
+                                    <p class="text-[#00303C] font-[500] text-[14px] opacity-75">Wed ,</p>
+                                    <h2 class="font-[700] text-[16px]">July 28 2025</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-dashed border-[1.2px] border-[#3752FD33] mt-6">
+
+                        <!-- Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                        
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        ShopEase</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Fix Mobile Button Issue
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Ensure buttons are responsive across devices by debugging overlapping elements and
+                                    verifying onClick functionality. Use
+                                    Chrome DevTools for inspection and conduct thorough mobile testing.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        CloudSync</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Add Dark Mode
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Implement a theme toggle to switch between light and dark modes, storing user
+                                    preferences in localStorage. Update CSS
+                                    variables dynamically and ensure accessibility in dark mode.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        SwiftPay</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Optimize Home Page
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Improve page speed by optimizing images and enabling lazy loading. Fix layout
+                                    inconsistencies, enhance mobile
+                                    responsiveness, and add smooth animations for a better user experience.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        Meta</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Add New Emoji 🤲
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Expand the emoji library with new reactions. Ensure proper rendering across
+                                    platforms, debug for display issues, and
+                                    test user interactions for seamless emoji selection.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        Google LLC</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Integrate OpenAI API
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Connect the app with OpenAI’s API for intelligent text generation. Implement secure
+                                    API calls, optimize request
+                                    handling, and debug input/output formatting for smooth performance.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#F4F7FF] rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div>
+                                    <p
+                                        class="inline-block p-1 px-2 bg-white text-[14px] font-[500] opacity-75 rounded-[8px]">
+                                        Glassdoor</p>
+                                </div>
+                                <h2 class="text-[18px] sm:text-[20px] font-[500]">
+                                    Improve Job Search
+                                </h2>
+                                <p
+                                    class="p-1 px-2 bg-white text-[14px] font-[400] opacity-75 rounded-[8px] line-clamp-2">
+                                    Enhance search algorithms for better job recommendations. Improve filtering and
+                                    sorting, fix UI inconsistencies, and
+                                    optimize backend queries for faster job retrieval.
+                                </p>
+                                <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <p class="text-[12px] sm:text-[14px] font-[400] opacity-70 text-[#00303C]">
+                                            Deadline</p>
+                                        <h3 class="text-[14px] sm:text-[14px] font-[500] text-[#00303C]">21 March 2025
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button id="completedTaskBtn"
+                                            class="px-4 py-2 sm:px-5 sm:py-3 bg-[#3752FD] text-white font-[500] text-[14px] sm:text-[16px] rounded-[8px]">
+                                            Mark as Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-md p-2">
+                        <div class="flex items-center gap-3 mb-4 justify-center mt-4">
+                            <img src="./assets/activity.png" alt="Activity Icon" class="w-8 sm:w-10">
+                            <h1 class="font-bold text-2xl">Activity Log</h1>
+                        </div>
+                        <div id="clearHistorybtn" class="text-center mb-4">
+                            <button
+                                class="px-5 py-3 bg-[#3752FD] text-white font-[500] text-[16px] rounded-[8px]  hover:scale-105 hover:shadow-lg transition-all duration-500  transform hover:-translate-y-1 active:scale-95">Clear
+                                History</button>
+                        </div>
+                        <hr class="border-dashed border-[1.2px] border-[#3752FD33]">
+
+                        <div id="activityLog" class="py-2 flex flex-col gap-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS Linking -->
+    <script src="./script/changeTheme.js"></script>
+    <script src="./script/dateDaynamicalWay.js"></script>
+    <script src="./script/completeBtn.js"></script>
+    <script src="./script/goToBlog.js"></script>
+</body>
+
+</html>
